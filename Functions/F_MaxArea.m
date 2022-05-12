@@ -5,7 +5,7 @@ function [w, Area] = F_MaxArea(returns, step, max_iter, stopping_criterion)
 % stopping_criterion = tolerance
 
 if exist('step')
-else step = 0.02;    
+else step = 0.01;    
 end
 
 if exist('max_iter') 
@@ -21,9 +21,17 @@ end
 gamma = mean(returns);
 rho = cov(returns);
 
-% COMPUTING THE ALGORITHM
+% x0
 n = size(returns,2);
-w = ones(1,n)/n;
+SD_vector = std(returns);
+[~, max_ratio_index] = max(gamma./SD_vector);
+w_ = zeros(1,n);
+w_(max_ratio_index) = 1;
+w = w_;
+
+% COMPUTING THE ALGORITHM
+
+% w = ones(1,n)/n;
 
 for i=1:max_iter
     w_old = w;
