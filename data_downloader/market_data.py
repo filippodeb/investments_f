@@ -2,7 +2,6 @@
 import pandas as pd
 from typing import Tuple, Optional
 from pandas.tseries.offsets import BDay
-import time
 import yfinance as yf
 import numpy as np
 
