@@ -10,11 +10,11 @@ SP500_tickers: Tuple[str, ...] = tuple(
 )
 
 NASDAQ100_tickers: Tuple[str, ...] = tuple(
-    pd.read_html("https://en.wikipedia.org/wiki/Nasdaq-100")[3]["Ticker"].tolist()
+    pd.read_html("https://en.wikipedia.org/wiki/Nasdaq-100")[4]["Ticker"].tolist()
 )
 
 EUROSTOXX50_tickers: Tuple[str, ...] = tuple(
-    pd.read_html("https://en.wikipedia.org/wiki/EURO_STOXX_50")[3]["Ticker"].tolist()
+    pd.read_html("https://en.wikipedia.org/wiki/EURO_STOXX_50")[2]["Ticker"].tolist()
 )
 
 DOW_JONES_tickers: Tuple[str, ...] = tuple(
