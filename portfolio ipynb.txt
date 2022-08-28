@@ -3,10 +3,11 @@ NASDAQ
             pd.Timestamp("2022-01-22"): {"FTNT": 0.74, "TSLA": 0.26},
             pd.Timestamp("2022-02-24"): {"COST": 0.12, "DDOG": 0.02, "DLTR": 0.02, "EXC": 0.58, "FTNT": 0.24, "ORLY": 0.02},
             pd.Timestamp("2022-03-24"): {"COST": 0.38, "DDOG": 0.003, "EXC": 0.3, "MRNA": 0.009, "NVDA": 0.1, "PANW": 0.21},
-		pd.Timestamp("2022-04-25"): {"COST": 0.18, "DLTR":0.07, "EXC": 0.59, "PANW": 0.16},
+		pd.Timestamp("2022-04-25"): {"COST": 0.18, "DLTR": 0.07, "EXC": 0.59, "PANW": 0.16},
 		pd.Timestamp("2022-05-25"): {"AEP": 0.1, "AMGN": 0.007, "ATVI": 0.015, "AZN": 0.1, "DLTR": 0.02, "EA": 0.02 "EXC": 0.45, "GILD": 0.05, "LCID": 0.03, "NTES": 0.01, "ORLY": 0.01, "PANW": 0.039, "PEP": 0.016, "REGN": 0.066, "SIRI": 0.007, "VRTX": 0.06},
-		pd.Timestamp("2022-06-21"): {"DLTR": 0.19, "EXC":0.45, "PANW": 0.05, "VRTX": 0.31},
-		pd.Timestamp("2022-07-27"): {"DLTR": 0.24, "EXC":0.45, "NTES": 0.02, "TSLA"0.02, "VRTX": 0.27}
+		pd.Timestamp("2022-06-21"): {"DLTR": 0.19, "EXC": 0.45, "PANW": 0.05, "VRTX": 0.31},
+		pd.Timestamp("2022-07-27"): {"DLTR": 0.24, "EXC": 0.45, "NTES": 0.02, "TSLA"0.02, "VRTX": 0.27}
+		pd.Timestamp("2022-08-28"): {"DLTR": 0.16, "EXC": 0.40, "PANW": 0.04, "TSLA"0.02, "VRTX": 0.38}
         }
 
 EUROSTOXX
@@ -18,4 +19,6 @@ EUROSTOXX
 		pd.Timestamp("2022-05-25"): {"DB1.DE": 0.28, "LIN.DE": 0.09, "SAN.PA": 0.17, "TTE.PA": 0.46},
 		pd.Timestamp("2022-06-21"): {"AD.AS": 0.06, "BAYN.DE": 0.25, "DB1.DE": 0.13, "LIN.DE": 0.05, "SAN.PA": 0.11, "TTE.PA": 0.40},
 		pd.Timestamp("2022-07-27"): {"DB1.DE": 0.39, "SAN.PA": 0.13, "TTE.PA": 0.48}
+		pd.Timestamp("2022-08-28"): {"AD.AS": 0.02, "BAYN.DE": 0.09, "DB1.DE": 0.38, "IBE.MC": 0.03, "RMS.PA": 0.02, "TTE.PA": 0.48}
+
         }
