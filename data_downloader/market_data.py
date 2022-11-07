@@ -4,12 +4,22 @@ from typing import Tuple, Optional
 from pandas.tseries.offsets import BDay
 import yfinance as yf
 import numpy as np
+from enum import Enum
+from alpaca_market_data import AlpacaMarketDataAPI
 
+class DataProvider(str, Enum):
+    """Data providers enum."""
+
+    YAHOO_FINANCE = "YAHOO_FINANCE"
+    ALPACA = "ALPACA"
 
 class MarketData:
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, data_provider: DataProvider) -> None:
+        self.data_provider = data_provider
+        if self.data_provider == DataProvider.ALPACA:
+            self.alpaca_api = AlpacaMarketDataAPI()
+
 
     def _get_prices(
         self,
@@ -46,21 +56,24 @@ class MarketData:
             else start_date
         )
         assert isinstance(start_date, pd.Timestamp), "Pass at least one param (start_date or years_of_observations)"
-        prices = yf.download(
-            tickers,
-            start=start_date,
-            end=end_date,
-            progress=False,
-            show_errors=False,
-        )
-        prices = prices.loc[:, "Adj Close"]
-        if isinstance(prices, pd.Series):
-            prices = pd.DataFrame(prices)
-        if len(prices.columns) == 1:
-            prices.columns = tickers
+        if self.data_provider == DataProvider.YAHOO_FINANCE:
+            prices = yf.download(
+                tickers,
+                start=start_date,
+                end=end_date,
+                progress=False,
+                show_errors=False,
+            )
+            prices = prices.loc[:, "Adj Close"]
+            if isinstance(prices, pd.Series):
+                prices = pd.DataFrame(prices)
+            if len(prices.columns) == 1:
+                prices.columns = tickers
+            prices.index = pd.to_datetime(prices.index).normalize().tz_localize(None)
+        elif self.data_provider == DataProvider.ALPACA:
+            prices = self.alpaca_api.get_timeseries(tickers, start_date, end_date)
         prices[prices <= 0.0] = np.nan
-        prices.index = prices.index.map(lambda x: x.date())
-        return prices
+        return prices.loc[:, list(tickers)]
 
     def get_returns(
         self,
