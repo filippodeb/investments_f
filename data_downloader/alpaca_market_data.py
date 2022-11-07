@@ -2,11 +2,8 @@
 import asyncio
 import logging
 from typing import Any, Dict, Tuple
-
 import pandas as pd
 
-
-import pandas as pd
 from alpaca.data import (
     Adjustment,
     StockBarsRequest,
