@@ -9,7 +9,8 @@ NASDAQ
 		pd.Timestamp("2022-07-27"): {"DLTR": 0.24, "EXC": 0.45, "NTES": 0.02, "TSLA"0.02, "VRTX": 0.27}
 		pd.Timestamp("2022-08-28"): {"DLTR": 0.16, "EXC": 0.40, "PANW": 0.04, "TSLA"0.02, "VRTX": 0.38}
 		pd.Timestamp("2022-10-02"): {"AEP": 0.26, "AMGN": 0.04, "ATVI": 0.07, "DLTR"0.13, "KDP": 0.04, "ORLY": 0.02, "VRTX": 0.44}
-		pd.Timestamp("2022-11-07"): {"AMGN": 0.42, "ATVI": 0.06, "DLTR": 0.14, "GILD": 0.03, "ORLY": 0.06, "VRTX": 0.29}
+		pd.Timestamp("2022-11-07"): {"ENPH": 0.2, "PDD": 0.25, "VRTX": 0.55}
+		
         }
 
 EUROSTOXX
@@ -24,4 +25,5 @@ EUROSTOXX
 		pd.Timestamp("2022-08-28"): {"AD.AS": 0.02, "BAYN.DE": 0.09, "DB1.DE": 0.38, "IBE.MC": 0.03, "RMS.PA": 0.02, "TTE.PA": 0.48}
 		pd.Timestamp("2022-10-02"): {"DB1.DE": 0.58, "IBE.MC": 0.16, "TTE.PA": 0.26}
 		pd.Timestamp("2022-11-07"): {"AD.AS": 0.03, "DB1.DE": 0.23, "DTE.DE": 0.31, "TTE.PA": 0.43}
+		pd.Timestamp("2022-12-10"): {"TTE.PA": 0.36, "DTE.DE": 0.13, "MUV2.DE": 0.07, "DB1.DE": 0.44}
         }

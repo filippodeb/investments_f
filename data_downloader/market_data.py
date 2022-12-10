@@ -13,6 +13,36 @@ class DataProvider(str, Enum):
     YAHOO_FINANCE = "YAHOO_FINANCE"
     ALPACA = "ALPACA"
 
+def clean_returns(returns: pd.DataFrame, threshold: int = 8.0):
+    """
+    Remove outliers from a time series returns data set.
+
+    This function calculates the returns data from the given time series data,
+    and then replaces values that are more than 'threshold' standard deviations
+    away from the mean with the mean value.
+
+    Args:
+        data (pd.DataFrame): The returns time series data to clean.
+        threshold (float): The number of standard deviations away from the mean
+            at which a value is considered an outlier.
+
+    Returns:
+        pd.DataFrame: The cleaned time series returns data.
+    """
+    # Iterate over the columns in the returns data
+    for col in returns.columns:
+        # Calculate the mean and standard deviation of the column
+        mean = returns[col].mean()
+        std = returns[col].std()
+
+        # Identify values that are more than 'threshold' standard deviations away from the mean
+        outliers = returns[col][np.abs(returns[col] - mean) > threshold * std]
+
+        # Replace these values with the mean value
+        returns[col].loc[outliers.index] = mean
+
+    return returns
+
 class MarketData:
 
     def __init__(self, data_provider: DataProvider) -> None:
@@ -114,4 +144,4 @@ class MarketData:
         returns = returns.dropna(
             axis=1, thresh=int(len(returns) * required_pct_obs)
         ).fillna(0.0)
-        return returns
+        return clean_returns(returns)
