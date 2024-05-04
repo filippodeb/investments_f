@@ -20,5 +20,6 @@
 	"2023-12-26": {"BBVA.MC": 0.04, "BN.PA": 0.16, "DTE.DE": 0.04, "ITX.MC": 0.34, "MUV2.DE": 0.01, "SGO.PA": 0.08, "SAN.PA": 0.14, "SAP.DE": 0.19},
 	"2024-01-28": {"BN.PA": 0.22, "DTE.DE": 0.11, "ITX.MC": 0.17, "SAN.PA": 0.14, "SAP.DE": 0.35},
 	"2024-02-24": {"ASML.AS": 0.01, "BN.PA": 0.12, "ITX.MC": 0.24, "MUV2.DE": 0.16, "SAF.PA": 0.01, "SGO.PA": 0.03, "SAN.PA": 0.12, "SAP.DE": 0.31},
-	"2024-03-26": {"AIR.PA": 0.01, "BBVA.MC": 0.24, "ITX.MC": 0.17, "INGA.AS": 0.03, "MUV2.DE": 0.18, "SAF.PA": 0.15, "SAP.DE": 0.21, "TTE.PA": 0.01}
+	"2024-03-26": {"AIR.PA": 0.01, "BBVA.MC": 0.24, "ITX.MC": 0.17, "INGA.AS": 0.03, "MUV2.DE": 0.18, "SAF.PA": 0.15, "SAP.DE": 0.21, "TTE.PA": 0.01},
+	"2024-05-04": {"ASML.AS": 0.05, "BBVA.MC": 0.16, "ITX.MC": 0.04, "INGA.AS": 0.21, "MUV2.DE": 0.02, "SAF.PA": 0.25, "SGO.PA": 0.06, "SAN.PA": 0.10, "SAP.DE": 0.05, "TTE.PA": 0.06}
 }
